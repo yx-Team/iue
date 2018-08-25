@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/yx-Team/iue/issues"
   },
-  "homepage": "https://github.com/yx-Team/iue#readme"
+  "homepage": "https://github.com/yx-Team/iue#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
