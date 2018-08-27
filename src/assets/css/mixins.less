@@ -1,0 +1,17 @@
+// 多色按钮
+.button(@button-color:@color-primary){
+    background-color:@button-color;
+    border-color:@button-color;
+    color: @color-white;
+    &:hover,&:focus{
+        background-color: mix(@color-white,@button-color,10%);
+        border-color:mix(@color-white,@button-color,10%);
+    }
+    &:focus{
+        box-shadow: 0 0 0 2px mix(@color-white,@button-color,80%);
+    }
+    &:active{
+        background-color: mix(@color-black,@button-color,10%);
+        border-color:mix(@color-black,@button-color,10%);
+    }
+}
