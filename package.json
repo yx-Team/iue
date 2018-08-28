@@ -4,7 +4,8 @@
   "description": "iue-pc组件库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html --no-cache"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   "homepage": "https://github.com/yx-Team/iue#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
+    "chai": "^4.1.2",
     "less": "^3.8.1",
     "parcel-bundler": "^1.9.7",
+    "postcss-modules": "^1.3.2",
     "vue-template-compiler": "^2.5.17"
   },
   "dependencies": {

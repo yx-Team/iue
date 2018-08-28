@@ -27,4 +27,9 @@ export default {
     }
 }
 </script>
+<style>
+[class*='iue-icon-'].iue-icon--right{
+    margin-left: 5px;
+}
+</style>
 
