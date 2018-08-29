@@ -2,10 +2,11 @@
   "name": "iue-pc",
   "version": "0.0.1",
   "description": "iue-pc组件库",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
-    "start": "parcel index.html --no-cache"
+    "start": "parcel index.html --no-cache",
+    "build":"parcel build index.js -d build/"
   },
   "repository": {
     "type": "git",
