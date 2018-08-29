@@ -18,11 +18,11 @@ export default {
     type: {
       type: String,
       default: "default"
-	},
-	nativeType:{
-	  type: String,
+    },
+    nativeType: {
+      type: String,
       default: ""
-	},
+    },
     circle: {
       type: Boolean,
       default: false
@@ -42,35 +42,22 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-	},
-	block:{
-		type: Boolean,
-      	default: false
-	}
+    },
+    block: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     className() {
-      let className = "";
-      if (this.type) {
-        className += `${namespace}button--${this.type} `;
-      }
-      if (this.circle) {
-        className += `${namespace}button--circle `;
-      }
-      if (this.round) {
-        className += `${namespace}button--round `;
-      }
-      if (this.loading) {
-        className += `is-loading `;
-      }
-      if (this.disabled) {
-        className += "is-disabled ";
-      }
-      if (this.size) {
-		  className += `${namespace}button--${this.size} `;
-	  }
-	  if (this.block) {
-		  className += `${namespace}button--block `;
+      let className = {
+        [`${namespace}button--${this.type}`]:this.type,
+        [`${namespace}button--circle`]:this.circle,
+        [`${namespace}button--round`]:this.round,
+        [`is-loading`]:this.loading,
+        [`is-disabled`]:this.disabled,
+        [`${namespace}button--${this.size}`]:this.size,
+        [`${namespace}button--block`]:this.block
       }
       return className;
     }
@@ -84,8 +71,8 @@ export default {
 </script>
 
 <style lang="less">
-@import "./assets/css/var";
-@import "./assets/css/mixins";
+@import "../assets/css/var";
+@import "../assets/css/mixins";
 .@{name-space}button {
   display: inline-flex;
   align-items: center;
@@ -153,13 +140,13 @@ export default {
     border-radius: 50%;
     padding: 0 7px;
   }
-  
+
   &--round {
     border-radius: 50px;
   }
-  &--block{
-	  width: 100%;
-	  justify-content: center;
+  &--block {
+    width: 100%;
+    justify-content: center;
   }
   &.is-loading {
     pointer-events: none;
@@ -174,41 +161,40 @@ export default {
       padding-left: 5px;
     }
   }
- &--large{
-	  height: 36px;
-	  font-size: 16px;
-	  padding: 0 9px;
+  &--large {
+    height: 36px;
+    font-size: 16px;
+    padding: 0 9px;
   }
-  &--small{
-	  height: 28px;
-	  font-size: 12px;
-	  padding: 0 7px;
-	  [class*="iue-icon-"]{
-		  font-size: 12px;
-	  }
+  &--small {
+    height: 28px;
+    font-size: 12px;
+    padding: 0 7px;
+    [class*="iue-icon-"] {
+      font-size: 12px;
+    }
   }
-  &-group{
-	  font-size: 0;
-	  .@{name-space}button{
+  &-group {
+    font-size: 0;
+    .@{name-space}button {
       border-radius: 0;
-      border-right: 1px solid rgba(255,255,255,0.1);
-      border-left: 1px solid rgba(255,255,255,0.1);
-      margin-top:-1px;
-	  }
-	  .@{name-space}button:first-child{
-      
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: -1px;
+    }
+    .@{name-space}button:first-child {
       border-radius: 4px 0 0 4px;
       border-left: 0;
       border-right: 0;
-      margin-top:0;
+      margin-top: 0;
     }
-    
-	  .@{name-space}button:last-child{
-		  border-radius: 0 4px 4px 0;
+
+    .@{name-space}button:last-child {
+      border-radius: 0 4px 4px 0;
       border-left: 0;
       border-right: 0;
-      margin-top:0;
-	  }
+      margin-top: 0;
+    }
   }
 }
 
