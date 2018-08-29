@@ -1,9 +1,0 @@
-{
-  "modules": false,
-  "plugins": {
-    "autoprefixer": {
-      "browsers": ['last 2 versions', 'Android >= 4.0'],
-      "grid": true
-    }
-  }
-}
