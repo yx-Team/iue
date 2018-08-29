@@ -182,21 +182,32 @@ export default {
   &--small{
 	  height: 28px;
 	  font-size: 12px;
-	  padding: 0 5px;
+	  padding: 0 7px;
 	  [class*="iue-icon-"]{
 		  font-size: 12px;
 	  }
   }
   &-group{
 	  font-size: 0;
-	  
-	  .@{name-space}button:first-child{
-		  border-top-right-radius: 0;
-		  border-bottom-right-radius: 0;
+	  .@{name-space}button{
+      border-radius: 0;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-left: 1px solid rgba(255,255,255,0.1);
+      margin-top:-1px;
 	  }
+	  .@{name-space}button:first-child{
+      
+      border-radius: 4px 0 0 4px;
+      border-left: 0;
+      border-right: 0;
+      margin-top:0;
+    }
+    
 	  .@{name-space}button:last-child{
-		  border-top-left-radius: 0;
-		  border-bottom-left-radius: 0;
+		  border-radius: 0 4px 4px 0;
+      border-left: 0;
+      border-right: 0;
+      margin-top:0;
 	  }
   }
 }
