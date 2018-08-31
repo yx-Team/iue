@@ -79,14 +79,18 @@ export default {
   align-items: center;
   vertical-align: middle;
   height: 32px;
+  -webkit-appearance: none;
+  outline: none;
+  font-family:inherit;
   line-height: 1.5;
   font-size: 14px;
   padding: 0 15px;
   border-width: 1px;
   border-style: solid;
-  border-radius: 4px;
+  border-radius: @button-radius;
   background: @color-white;
   transition: all 0.3s ease;
+  
   cursor: pointer;
   [class*="iue-icon-"],
   .iconfont {
@@ -184,14 +188,14 @@ export default {
       margin-top: -1px;
     }
     .@{name-space}button:first-child {
-      border-radius: 4px 0 0 4px;
+      border-radius: @button-radius 0 0 @button-radius;
       border-left: 0;
       border-right: 0;
       margin-top: 0;
     }
 
     .@{name-space}button:last-child {
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 @button-radius @button-radius 0;
       border-left: 0;
       border-right: 0;
       margin-top: 0;

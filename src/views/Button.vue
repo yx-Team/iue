@@ -66,6 +66,11 @@
 <script>
 
 export default {
-  name: 'home'
+  name: 'home',
+  methods:{
+    btnHandle(){
+      alert('点击了按钮')
+    }
+  }
 }
 </script>
