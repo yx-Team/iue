@@ -45,7 +45,7 @@ title: Button
 <iue-button icon="search" size="large" circle></iue-button>
 <iue-button icon="search" circle></iue-button>
 <iue-button icon="search" size="small" circle></iue-button>
-<iue-button icon="search" type="primary" round disabled>主按钮</iue-button>
+<iue-button icon="search" type="primary" round disabled>按钮</iue-button>
 <iue-button icon="search" type="dashed" round>虚线</iue-button>
 <iue-button icon="search" type="info" round>Info</iue-button>
 <iue-button icon="search" type="success" round>Success</iue-button>
