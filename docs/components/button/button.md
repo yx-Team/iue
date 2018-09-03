@@ -76,6 +76,23 @@ title: Button
 <iue-button size="small">小型按钮</iue-button>
 ~~~
 
+### 按钮组
+提供三种大小按钮  larger default small 
+
+<button-group></button-group>
+~~~ html
+<iue-button-group>
+    <iue-button type="primary">大型按钮</iue-button>
+    <iue-button  type="primary">默认按钮</iue-button>
+    <iue-button type="primary">小型按钮</iue-button>
+</iue-button-group>
+<iue-button-group>
+            <iue-button type="primary" icon="left-arrow">大型按钮</iue-button>
+            <iue-button  type="primary">默认按钮</iue-button>
+            <iue-button type="primary">小型按钮<iue-icon icon="right-arrow" /></iue-button>
+        </iue-button-group>
+~~~
+
 ### Attributes
 
 | 参数        | 说明                       | 类型       | 可选值       |默认值       |

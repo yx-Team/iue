@@ -185,7 +185,7 @@ export default {
       border-radius: 0;
       border-right: 1px solid rgba(255, 255, 255, 0.1);
       border-left: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: -1px;
+      
     }
     .@{name-space}button:first-child {
       border-radius: @button-radius 0 0 @button-radius;
