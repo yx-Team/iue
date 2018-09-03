@@ -2,11 +2,15 @@ import './assets/css/index.less';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Icon from './icon';
+import Row from './row';
+import Col from './col';
 
 const components = [
     Button,
     ButtonGroup,
-    Icon
+    Icon,
+    Row,
+    Col
 ]
 
 const install = function(Vue){
