@@ -55,9 +55,17 @@
         <iue-button size="small" icon="like" type="warning" block>小型按钮</iue-button>
         <hr />
         <iue-button-group>
-                <iue-button type="primary" icon="left-arrow">上一步</iue-button>
-                <iue-button type="primary">上一步</iue-button>
-                <iue-button type="primary">上一步 <iue-icon icon="right-arrow"></iue-icon></iue-button>
+                <iue-button type="primary" icon="left-arrow">上一页</iue-button>
+                <iue-button type="primary">下一页 <iue-icon icon="right-arrow"></iue-icon></iue-button>
+        </iue-button-group>
+        <iue-button-group>
+                <iue-button icon="like-o" type="info"></iue-button>
+                <iue-button icon="apple-o" type="info"></iue-button>
+                <iue-button icon="collection-o" type="info"></iue-button>
+        </iue-button-group>
+        <iue-button-group>
+                <iue-button icon="left-arrow">上一页</iue-button>
+                <iue-button>下一页 <iue-icon icon="right-arrow"></iue-icon></iue-button>
         </iue-button-group>
     
   </div>

@@ -101,6 +101,7 @@ export default {
   }
   &:focus {
     box-shadow: 0 0 0 2px #d5e8fc;
+    z-index: 1;
   }
   &--default,
   &--dashed,
@@ -180,24 +181,37 @@ export default {
     }
   }
   &-group {
+    .clearfix();
     font-size: 0;
-    .@{name-space}button {
+    display: inline-block;
+    &>.@{name-space}button {
+      
       border-radius: 0;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      // 解决按钮组不顶对起奇的问题
+      position: relative;
+      float: left;
+      margin-left: -1px;
+      &:hover,&:active,&:focus{
+        z-index: 1;
+      }
+      // 解决按钮组分割线问题
+      // &:not(.@{name-space}button--default):not(:first-child):not(:last-child){
+      //   border-left-color: rgba(255,255,255,0.2);
+      //   border-right-color: rgba(255,255,255,0.2);
+      // }
+       &:not(.@{name-space}button--default):not(:first-child){
+        border-left-color: rgba(255,255,255,0.2);
+        border-right-color: rgba(255,255,255,0.2);
+      }
       
     }
     .@{name-space}button:first-child {
       border-radius: @button-radius 0 0 @button-radius;
-      border-left: 0;
-      border-right: 0;
-      margin-top: 0;
+      margin-left: 0;
     }
 
     .@{name-space}button:last-child {
       border-radius: 0 @button-radius @button-radius 0;
-      border-left: 0;
-      border-right: 0;
       margin-top: 0;
     }
   }

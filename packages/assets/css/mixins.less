@@ -1,3 +1,14 @@
+// 清除浮动
+.clearfix(){
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
 // 多色按钮
 .button(@button-color:@color-primary){
     background-color:@button-color;
