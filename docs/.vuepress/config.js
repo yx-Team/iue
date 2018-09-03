@@ -1,5 +1,5 @@
 module.exports = {
-  base:'/iue',
+  base:'/iue/',
   title: "iue 组件库官网",
   description: "一个基于vue的组件库！",
   lastUpdated: "Last Updated", // string | boolean
