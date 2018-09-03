@@ -77,7 +77,6 @@ title: Button
 ~~~
 
 ### 按钮组
-提供三种大小按钮  larger default small 
 
 <button-group></button-group>
 ~~~ html
@@ -95,7 +94,14 @@ title: Button
         <iue-button>下一页 <iue-icon icon="right-arrow"></iue-icon></iue-button>
 </iue-button-group>
 ~~~
+### 块状按钮
 
+<button-block></button-block>
+~~~ html
+<iue-button size="large" icon="like" type="info" block>大型按钮</iue-button>
+<iue-button type="success" icon="like" block>默认按钮</iue-button>
+<iue-button size="small" icon="like" type="warning" block>小型按钮</iue-button>
+~~~
 ### Attributes
 
 | 参数        | 说明                       | 类型       | 可选值       |默认值       |
@@ -109,3 +115,14 @@ title: Button
 | loading     | 是否加载中状态            |    Boolean   | --    |  --         |
 | disabled    | 是否禁用按钮              |    Boolean   | --    |  --         |
 | block       | 是否显示块状按钮          |    Boolean   | --    |  --         |
+
+
+<style lang="less">
+    /* 示例间距 */
+    .example-demo{
+        margin:10px 0; 
+        .iue-button{
+            margin-bottom:5px;
+        }
+    }
+</style>

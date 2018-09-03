@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="example-demo">
         <iue-button icon="search" size="large" circle></iue-button>
         <iue-button icon="search" circle></iue-button>
         <iue-button icon="search" size="small" circle></iue-button>

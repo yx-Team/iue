@@ -1,5 +1,5 @@
 <template>
-    <div>
+   <div class="example-demo">
         <iue-button-group>
                 <iue-button type="primary" icon="left-arrow">上一页</iue-button>
                 <iue-button type="primary">下一页 <iue-icon icon="right-arrow"></iue-icon></iue-button>

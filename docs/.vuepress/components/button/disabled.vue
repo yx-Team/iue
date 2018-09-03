@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="example-demo">
         <iue-button disabled>默认</iue-button>
         <iue-button type="primary" disabled>主按钮</iue-button>
         <iue-button type="dashed" disabled>虚线</iue-button>

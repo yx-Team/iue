@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="example-demo">
         <iue-button  loading type="primary" round>加载中...</iue-button>
     </div>
 </template>
