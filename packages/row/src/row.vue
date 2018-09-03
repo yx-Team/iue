@@ -1,22 +1,33 @@
 <template>
-    <div>
-        <div class="iue-row iue-row--flex" :class="className">
+    <div class="iue-row" :class="className">
+        <slot></slot>
+    </div>
+    <!-- <div>
+        <div class="iue-row" :class="className">
             <div class="iue-col-12">12</div>
             <div class="iue-col-12">12</div>
         </div>
-        <div class="iue-row iue-row--flex" :class="className">
+        <div class="iue-row" :class="className">
             <div class="iue-col-8">8</div>
             <div class="iue-col-8">8</div>
             <div class="iue-col-8">8</div>
         </div>
-        <div class="iue-row iue-row--flex" :class="className">
+        <div class="iue-row" :class="className">
             <div class="iue-col-6">6</div>
             <div class="iue-col-6">6</div>
-            <div class="iue-col-6">6</div>
-            <div class="iue-col-6">6</div>
+            <div class="iue-col-6 iue-col-offset-6">6</div>
         </div>
-        
-    </div>    
+        <div class="iue-row" :class="className">
+            <div class="iue-col-4 iue-col-offset-4">4</div>
+            <div class="iue-col-4 iue-col-offset-4">4</div>
+            <div class="iue-col-4 iue-col-offset-4">4</div>
+        </div>
+        <div class="iue-row" :class="className">
+            <div class="iue-col-8">8</div>
+            <div class="iue-col-8">8</div>
+            <div class="iue-col-8">8</div>
+        </div>
+    </div>     -->
 </template>
 
 <script>
@@ -44,6 +55,7 @@ export default {
 @import "../../assets/css/var";
 @import "../../assets/css/mixins";
 .@{name-space}row{
+    .clearfix();
     &--flex{
         display: flex;
         flex-direction: row;
@@ -56,9 +68,14 @@ export default {
 .loop(24);
 .loop(@counter) when (@counter > 0) {
     .loop((@counter - 1));
+    // 网格
     .@{name-space}col-@{counter}{
         float: left;
         width: (@counter/24*100%);
+    }
+    // 偏移
+    .@{name-space}col-offset-@{counter}{
+        margin-left: (@counter/24*100%);
     }
 }
 </style>
