@@ -9,20 +9,21 @@ let namespace = "iue-";
 export default {
     name:'IueRow',
     props:{
-        type:{
-            type:String,
-            default:''
-        },
-        gutter:{
-            type:[String,Number],
-            default:''
-        }
+        type:String,
+        justify:String,
+        align:String,
+        gutter:[String,Number]
     },
     computed:{
         className(){
             var className={
-                [`${namespace}--flex`]:this.type
-            }
+                [`${namespace}row-flex`]:this.type
+            };
+            ['align','justify'].forEach(item=>{
+                if(this[item]){
+                    className[`${namespace}row-${item}--${this[item]}`]=this[item]
+                }
+            });
             return className
         },
         rowStyle(){
@@ -54,11 +55,36 @@ export default {
 @import "../../assets/css/mixins";
 .@{name-space}row{
     .clearfix();
-    &--flex{
+    &-flex{
         display: flex;
         flex-direction: row;
-        &>[class*='iue-col-']{
-            border:1px solid #000;
+    }
+    &-align{
+        &--top{
+            align-items: flex-start;
+        }
+        &--center{
+            align-items: center;
+        }
+        &--bottom{
+            align-items: flex-end;
+        }
+    }
+    &-justify{
+        &--left{
+            justify-content: flex-start;
+        }
+        &--center{
+            justify-content: center;
+        }
+        &--right{
+            justify-content: flex-end;
+        }
+        &--around{
+            justify-content: space-around;
+        }
+        &--between{
+            justify-content:space-between;
         }
     }
 }

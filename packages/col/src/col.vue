@@ -13,7 +13,7 @@ export default {
         },
         offset:{
             type:[String,Number],
-            default:''
+            default:0
         },
         xs:[Number,Object],
         sm:[Number,Object],
