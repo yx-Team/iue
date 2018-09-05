@@ -4,13 +4,23 @@ import ButtonGroup from './button-group';
 import Icon from './icon';
 import Row from './row';
 import Col from './col';
+import Layout from './layout';
+import Header from './header';
+import Footer from './footer';
+import Content from './content';
+import Sider from './sider';
 
 const components = [
     Button,
     ButtonGroup,
     Icon,
     Row,
-    Col
+    Col,
+    Layout,
+    Header,
+    Footer,
+    Content,
+    Sider
 ]
 
 const install = function(Vue){

@@ -1,5 +1,5 @@
 <template>
-    <div class="iue-content"></div>
+    <div class="iue-content"><slot></slot></div>
 </template>
 
 <script>

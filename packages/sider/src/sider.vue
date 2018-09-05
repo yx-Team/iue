@@ -1,5 +1,5 @@
 <template>
-    <div class="iue-layout"></div>
+    <div class="iue-sider"><slot></slot></div>
 </template>
 
 <script>

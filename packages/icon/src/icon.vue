@@ -6,7 +6,7 @@
 export default {
     name:'iue-icon',
     props:{
-        icon:{
+        type:{
             type:String,
             default:''
         },
@@ -17,8 +17,8 @@ export default {
     },
     computed:{
         className(){
-            if(this.icon){
-                return 'iue-icon-'+this.icon
+            if(this.type){
+                return 'iue-icon-'+this.type
             }
             if(this.custom){
                  return this.custom

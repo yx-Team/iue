@@ -1,10 +1,16 @@
 <template>
-    <div class="iue-header"></div>
+    <div class="iue-header" :style="{height:height+'px'}"><slot></slot></div>
 </template>
 
 <script>
 export default {
-    name:'IueHeader'
+    name:'IueHeader',
+    props:{
+        height:{
+            type:Number,
+            default:64
+        }
+    }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <button :type="nativeType" :class="className" :disabled="disabled" @click="handle">
-        <iue-icon icon="loading" v-if="loading"></iue-icon>
-        <iue-icon :icon="icon" v-if="icon"></iue-icon>
+        <iue-icon type="loading" v-if="loading"></iue-icon>
+        <iue-icon :type="icon" v-if="icon"></iue-icon>
         <span v-if="$slots.default"><slot></slot></span>
     </button>
 </template>

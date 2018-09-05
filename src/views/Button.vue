@@ -44,7 +44,7 @@
         <iue-button icon="search" type="danger" round>Danger</iue-button>
         <hr />
         <iue-button type="primary" round icon="like">喜欢</iue-button>
-        <iue-button type="primary" round>喜欢<iue-icon class="iue-icon--right" icon="like-o"></iue-icon></iue-button>
+        <iue-button type="primary" round>喜欢<iue-icon class="iue-icon--right" type="like-o"></iue-icon></iue-button>
         <hr />
         <iue-button size="large">大型按钮</iue-button>
         <iue-button >默认按钮</iue-button>
@@ -56,7 +56,7 @@
         <hr />
         <iue-button-group>
                 <iue-button type="primary" icon="left-arrow">上一页</iue-button>
-                <iue-button type="primary">下一页 <iue-icon icon="right-arrow"></iue-icon></iue-button>
+                <iue-button type="primary">下一页 <iue-icon type="right-arrow"></iue-icon></iue-button>
         </iue-button-group>
         <iue-button-group>
                 <iue-button icon="like-o" type="info"></iue-button>

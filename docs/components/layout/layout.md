@@ -54,4 +54,6 @@
 :::
 
 
-### 常见布局
+## 常见布局
+
+<layout-base></layout-base>
