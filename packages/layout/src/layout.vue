@@ -9,5 +9,9 @@ export default {
 </script>
 
 <style lang="less">
-
+@import "../../assets/css/var";
+@import "../../assets/css/mixins";
+.@{name-space}layout{
+    display: flex;    
+}
 </style>

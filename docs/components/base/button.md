@@ -4,9 +4,9 @@ pageClass: page-content-wrap
 ---
 
 
-# Button
+# Button 按钮
 
-### 基础用法
+## 基础用法
 基础的按钮用法
 <button-base></button-base>
 ~~~ html
@@ -20,7 +20,7 @@ pageClass: page-content-wrap
 <iue-button type="danger">Danger</iue-button>
 ~~~
 
-### 禁用状态
+## 禁用状态
 按钮不可以点击
 
 <button-disabled></button-disabled>
@@ -36,7 +36,7 @@ pageClass: page-content-wrap
 ~~~
 
 
-### 图标按钮
+## 图标按钮
 图标按钮有较强的识别性
 
 <button-icon></button-icon>
@@ -56,7 +56,7 @@ pageClass: page-content-wrap
 加了属性circle的组件最好不要带文字，只要图标
 :::
 
-### 加载按钮
+## 加载按钮
 在按钮上显示加载状态
 
 <button-loading></button-loading>
@@ -65,7 +65,7 @@ pageClass: page-content-wrap
 ~~~
 
 
-### 不同尺寸按钮
+## 不同尺寸按钮
 提供三种大小按钮  larger default small 
 
 <button-size></button-size>
@@ -75,7 +75,7 @@ pageClass: page-content-wrap
 <iue-button size="small">小型按钮</iue-button>
 ~~~
 
-### 按钮组
+## 按钮组
 
 <button-group></button-group>
 ~~~ html
@@ -93,7 +93,7 @@ pageClass: page-content-wrap
         <iue-button>下一页 <iue-icon icon="right-arrow"></iue-icon></iue-button>
 </iue-button-group>
 ~~~
-### 块状按钮
+## 块状按钮
 
 <button-block></button-block>
 ~~~ html

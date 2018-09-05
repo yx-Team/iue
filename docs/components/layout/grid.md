@@ -3,9 +3,9 @@
  pageClass: page-content-wrap
 ---
 
-# 网格
+# Grid 网格
 
-### 基础布局
+## 基础布局
 
 <grid-base></grid-base>
 
@@ -38,7 +38,7 @@
 </iue-row>
 ~~~
 
-### 分栏间距
+## 分栏间距
 <grid-gutter></grid-gutter>
 
 ~~~html
@@ -50,7 +50,7 @@
 </iue-row>
 ~~~
 
-### 分栏偏移
+## 分栏偏移
 支持偏移指定的栏数。
 <grid-offset></grid-offset>
 
@@ -71,7 +71,7 @@
     <iue-col span="4" offset="4"><div class="grid-bg-light">4</div></iue-col>
 </iue-row>
 ~~~
-### flex布局
+## flex布局
 在flex模式下有效，通过设置row的参数(justify、align)为不同的值，来定义子元素的排布方式。
 
 <grid-flex></grid-flex>
@@ -130,7 +130,7 @@
 </iue-row>
 ~~~
 
-### 响应式布局
+## 响应式布局
 参考bootstrap,预留xs、sm、md、lg、xl 这5个属性，并且可以通过 order 来改变元素的排序。
 
 <grid-media></grid-media>
@@ -175,6 +175,7 @@
 | lg          | ≥1200px 响应式栅格数或者栅格属性对象   |    Number/Object(例如： {span: 4, offset: 4})   | --             |  --          |
 | xl          | ≥1920px 响应式栅格数或者栅格属性对象   |    Number/Object(例如： {span: 4, offset: 4})   | --             |  --          |
 <style lang="less">
+    
     /* 示例间距 */
     .example-demo{
         &-row{
