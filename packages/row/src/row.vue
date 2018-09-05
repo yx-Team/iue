@@ -1,33 +1,7 @@
 <template>
-    <div class="iue-row" :class="className">
+    <div class="iue-row" :class="className" :style="rowStyle">
         <slot></slot>
     </div>
-    <!-- <div>
-        <div class="iue-row" :class="className">
-            <div class="iue-col-12">12</div>
-            <div class="iue-col-12">12</div>
-        </div>
-        <div class="iue-row" :class="className">
-            <div class="iue-col-8">8</div>
-            <div class="iue-col-8">8</div>
-            <div class="iue-col-8">8</div>
-        </div>
-        <div class="iue-row" :class="className">
-            <div class="iue-col-6">6</div>
-            <div class="iue-col-6">6</div>
-            <div class="iue-col-6 iue-col-offset-6">6</div>
-        </div>
-        <div class="iue-row" :class="className">
-            <div class="iue-col-4 iue-col-offset-4">4</div>
-            <div class="iue-col-4 iue-col-offset-4">4</div>
-            <div class="iue-col-4 iue-col-offset-4">4</div>
-        </div>
-        <div class="iue-row" :class="className">
-            <div class="iue-col-8">8</div>
-            <div class="iue-col-8">8</div>
-            <div class="iue-col-8">8</div>
-        </div>
-    </div>     -->
 </template>
 
 <script>
@@ -38,6 +12,10 @@ export default {
         type:{
             type:String,
             default:''
+        },
+        gutter:{
+            type:[String,Number],
+            default:''
         }
     },
     computed:{
@@ -46,7 +24,27 @@ export default {
                 [`${namespace}--flex`]:this.type
             }
             return className
+        },
+        rowStyle(){
+            let gutter = this.gutter;
+            if(gutter){
+                gutter=Number(gutter);
+                return [
+                    {'marginLeft':-gutter/2+'px'},
+                    {'marginRight':-gutter/2+'px'}
+                ]
+            }
+            return [];
         }
+    },
+    mounted(){
+        if(this.gutter){
+            // 通过this.$children获取组件row里面的col子组件，循环设置col里面的gutter值
+            this.$children.forEach(component=>{
+                component.gutter=Number(this.gutter);
+            })
+        }
+       
     }
 }
 </script>
@@ -66,16 +64,41 @@ export default {
 }
 // 网格 24 列 递归循环
 .loop(24);
-.loop(@counter) when (@counter > 0) {
-    .loop((@counter - 1));
+.loop(@col) when (@col > 0) {
+    .loop((@col - 1));
     // 网格
-    .@{name-space}col-@{counter}{
+    .@{name-space}col-@{col}{
         float: left;
-        width: (@counter/24*100%);
+        width: (@col/24*100%);
     }
     // 偏移
-    .@{name-space}col-offset-@{counter}{
-        margin-left: (@counter/24*100%);
+    .@{name-space}col-offset-@{col}{
+        margin-left: (@col/24*100%);
     }
 }
+
+.media(@col,@media) when (@col>0){
+    .media((@col - 1),@media);
+    .@{name-space}col-@{media}-@{col}{
+        width: (@col/24*100%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+   .media(24,xs);
+}
+@media screen and (min-width:768px) {
+    .media(24,sm);
+}
+@media screen and (min-width: 992px) {
+    .media(24,md);
+}
+@media screen and (min-width: 1200px) {
+    .media(24,lg);
+}
+@media screen and (min-width: 1920px) {
+    .media(24,xl);
+}
+
+
 </style>
