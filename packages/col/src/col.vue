@@ -33,8 +33,18 @@ export default {
                 [`${namespace}col-offset-${this.offset}`]:this.offset
             };
             ['xs','sm','md','lg','xl'].forEach(media => {
-                if(this[media]) {
+                if(typeof this[media]==='number') {
                     className[`${namespace}col-${media}-${this[media]}`] = true
+                }else if(typeof this[media]==='object'){
+                    // 返回一个数组，对象属性的键名
+                    let keys =Object.keys(this[media]);
+                    keys.forEach(key=>{
+                        if(key==='span'){
+                            className[`${namespace}col-${media}-${this[media][key]}`] = true
+                        }else if(key === 'offset'){
+                            className[`${namespace}col-${media}-offset-${this[media][key]}`] = true
+                        }
+                    })
                 }
             });
             return className;

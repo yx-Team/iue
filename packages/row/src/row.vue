@@ -101,12 +101,16 @@ export default {
     .@{name-space}col-offset-@{col}{
         margin-left: (@col/24*100%);
     }
+    
 }
 
 .media(@col,@media) when (@col>0){
     .media((@col - 1),@media);
     .@{name-space}col-@{media}-@{col}{
         width: (@col/24*100%);
+    }
+    .@{name-space}col-@{media}-offset-@{col}{
+        margin-left: (@col/24*100%);
     }
 }
 

@@ -137,6 +137,11 @@
     <iue-col :xs="24" :sm="6" :md="8" :lg="12" :xl="4"><div class="grid-bg"> </div></iue-col>
     <iue-col :xs="24" :sm="6" :md="8" :lg="12" :xl="4"><div class="grid-bg-light"> </div></iue-col>
 </iue-row>
+<iue-row :gutter="20">
+    <iue-col :md="{span:4,offset:4}" :lg="{span:6}"><div class="grid-bg"> </div></iue-col>
+    <iue-col :md="{span:4,offset:4}" :lg="{span:4,offset:2}"><div class="grid-bg-light"> </div></iue-col>
+    <iue-col :md="{span:4}" :lg="{span:4,offset:2}"><div class="grid-bg"> </div></iue-col>
+</iue-row>
 ~~~
 
 
@@ -164,32 +169,40 @@
 <style lang="less">
     /* 示例间距 */
     .example-demo{
+        &-row{
+            overflow:hidden;
+            background:#f7f7f7;
+            padding:0 10px;
+        }
         .grid-bg-dark{
-            background:#dddddd;
+            background:#017efe;
             border-radius:4px;
              width:100%;
              height:50px;
              line-height:50px;
              margin-bottom:10px;
+             color:#fff;
         }
         .grid-bg{
-            background:#D6D8DC;
+            background:#0199fe;
             border-radius:4px;
              width:100%;
              height:50px;
              line-height:50px;
              margin-bottom:10px;
+             color:#fff;
         }
         .grid-bg-light{
-            background:#f8f8f8;
+            background:#80ccff;
              border-radius:4px;
              width:100%;
              height:50px;
              line-height:50px;
              margin-bottom:10px;
+             color:#fff;
         }
         .iue-row{
-            margin:10px 0;  
+            margin:10px 0 0px;  
             
         }
         .iue-col{

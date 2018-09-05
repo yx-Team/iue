@@ -1,10 +1,10 @@
 <template>
     <div class="example-demo">
         <iue-row :gutter="20">
-            <iue-col span="6"><div class="grid-bg">6</div></iue-col>
-            <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
-            <iue-col span="6"><div class="grid-bg">6</div></iue-col>
-            <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
         </iue-row>
     </div>
 </template>
