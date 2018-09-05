@@ -79,52 +79,59 @@
 ~~~html
 <!-- 左对齐 -->
 <iue-row type="flex" justify="left" align="center">
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
 </iue-row>
 <!-- 居中对齐 -->
 <iue-row type="flex" justify="center" align="center">
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
 </iue-row>
 <!-- 右对齐 -->
 <iue-row type="flex" justify="right" align="center">
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
 </iue-row>
 
 <!-- 子元素顶对齐 -->
 <iue-row type="flex" justify="left" align="top">
-    <iue-col span="4"><div class="grid-bg" style="height:80px">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg" style="height:80px">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg" style="height:80px">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg" style="height:80px">6</div></iue-col>
 </iue-row>
 <!-- 子元素底对齐 -->
 <iue-row type="flex" justify="center" align="bottom">
-    <iue-col span="4"><div class="grid-bg" style="height:80px">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg" style="height:80px">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg" style="height:80px">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg" style="height:80px">6</div></iue-col>
 </iue-row>
 
 <!-- 子元素两边对齐 -->
 <iue-row type="flex" justify="between" align="center">
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
 </iue-row>
 <!-- 子元素平分空间对齐 -->
 <iue-row type="flex" justify="around" align="center">
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg-light">4</div></iue-col>
-    <iue-col span="4"><div class="grid-bg">4</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg-light">6</div></iue-col>
+    <iue-col span="6"><div class="grid-bg">6</div></iue-col>
+</iue-row>
+<!-- order排序 -->
+<iue-row type="flex" justify="center" align="center">
+    <iue-col span="6" order="4"><div class="grid-bg">1 col-order-4</div></iue-col>
+    <iue-col span="6" order="3"><div class="grid-bg-light">2  col-order-3</div></iue-col>
+    <iue-col span="6" order="2"><div class="grid-bg">3  col-order-2</div></iue-col>
+    <iue-col span="6" order="1"><div class="grid-bg-light">4  col-order-1</div></iue-col>
 </iue-row>
 ~~~
 
 ### 响应式布局
-参考bootstrap,预留xs、sm、md、lg、xl 这5个属性
+参考bootstrap,预留xs、sm、md、lg、xl 这5个属性，并且可以通过 order 来改变元素的排序。
 
 <grid-media></grid-media>
 
@@ -137,6 +144,7 @@
     <iue-col :xs="24" :sm="6" :md="8" :lg="12" :xl="4"><div class="grid-bg"> </div></iue-col>
     <iue-col :xs="24" :sm="6" :md="8" :lg="12" :xl="4"><div class="grid-bg-light"> </div></iue-col>
 </iue-row>
+
 <iue-row :gutter="20">
     <iue-col :md="{span:4,offset:4}" :lg="{span:6}"><div class="grid-bg"> </div></iue-col>
     <iue-col :md="{span:4,offset:4}" :lg="{span:4,offset:2}"><div class="grid-bg-light"> </div></iue-col>

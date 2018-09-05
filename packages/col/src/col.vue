@@ -15,6 +15,7 @@ export default {
             type:[String,Number],
             default:0
         },
+        order:[String,Number],
         xs:[Number,Object],
         sm:[Number,Object],
         md:[Number,Object],
@@ -29,8 +30,9 @@ export default {
     computed:{
         className(){
             var className={
-                [`${namespace}col-${this.span}`]:this.span,
-                [`${namespace}col-offset-${this.offset}`]:this.offset
+                [`${namespace}col-${this.span}`]:this.span && Number(this.span),
+                [`${namespace}col-offset-${this.offset}`]:this.offset && Number(this.offset),
+                [`${namespace}col-order-${this.order}`]:this.order && Number(this.order)
             };
             ['xs','sm','md','lg','xl'].forEach(media => {
                 if(typeof this[media]==='number') {

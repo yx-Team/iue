@@ -101,9 +101,13 @@ export default {
     .@{name-space}col-offset-@{col}{
         margin-left: (@col/24*100%);
     }
+    // flex order 排序
+    .@{name-space}col-order-@{col}{
+        order:@col;
+    }
     
 }
-
+// 媒体查询 响应式布局
 .media(@col,@media) when (@col>0){
     .media((@col - 1),@media);
     .@{name-space}col-@{media}-@{col}{
