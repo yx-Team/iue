@@ -1,5 +1,6 @@
 ---
  title: Gird
+ pageClass: page-content-wrap
 ---
 
 # 网格

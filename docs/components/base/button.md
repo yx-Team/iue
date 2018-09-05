@@ -1,7 +1,6 @@
 ---
-
 title: Button
-
+pageClass: page-content-wrap
 ---
 
 
