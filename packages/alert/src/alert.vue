@@ -72,9 +72,6 @@ export default {
             return list
         }
     },
-    mounted(){
-        console.log(this.$slots.desc)
-    },
     methods:{
         close(e){
             // 触发关闭事件
@@ -95,6 +92,7 @@ export default {
 .iue-alert{
     position: relative;
     padding:8px 15px;
+    line-height: 1.15;
     font-size: 0;
     border-radius: @alert-radius;
     vertical-align: middle;
@@ -120,12 +118,12 @@ export default {
     }
     &__title{
         font-size: 12px;
-        line-height:1;
+        
         color: #434E66
     }
     &__desc{
         font-size: 12px;
-        line-height:1;
+        
         padding-top: 10px;
         color: #434E66
     }
