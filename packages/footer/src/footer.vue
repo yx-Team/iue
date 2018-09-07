@@ -1,5 +1,5 @@
 <template>
-    <div class="iue-footer" :style="{height:height+'px'}">
+    <div class="iue-footer" :style="{height:height}">
         <slot></slot>
     </div>
 </template>
@@ -9,8 +9,8 @@ export default {
     name:'IueFooter',
     props:{
         height:{
-            type:Number,
-            default:60
+            type:String,
+            default:'60px'
         }
     }
 }

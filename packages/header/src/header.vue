@@ -1,5 +1,5 @@
 <template>
-    <div class="iue-header" :style="{height:height+'px'}"><slot></slot></div>
+    <div class="iue-header" :style="{height:height}"><slot></slot></div>
 </template>
 
 <script>
@@ -7,8 +7,8 @@ export default {
     name:'IueHeader',
     props:{
         height:{
-            type:Number,
-            default:64
+            type:String,
+            default:'64px'
         }
     }
 }
