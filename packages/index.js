@@ -9,6 +9,7 @@ import Header from './header';
 import Footer from './footer';
 import Content from './content';
 import Sider from './sider';
+import Alert from './alert';
 
 const components = [
     Button,
@@ -20,7 +21,8 @@ const components = [
     Header,
     Footer,
     Content,
-    Sider
+    Sider,
+    Alert
 ]
 
 const install = function(Vue){
