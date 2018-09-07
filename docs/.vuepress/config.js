@@ -25,7 +25,8 @@ module.exports = {
           "/components/base/button",
           "/components/layout/grid",
           "/components/layout/layout",
-          "/components/notice/alert"
+          "/components/notice/alert",
+          "/components/notice/message"
         ]
       }
     ],

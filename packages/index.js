@@ -10,7 +10,7 @@ import Footer from './footer';
 import Content from './content';
 import Sider from './sider';
 import Alert from './alert';
-
+import Message from './message/index';
 const components = [
     Button,
     ButtonGroup,
@@ -25,10 +25,12 @@ const components = [
     Alert
 ]
 
+
 const install = function(Vue){
     components.forEach(component=>{
         Vue.component(component.name,component)
     })
+    Vue.prototype.$Message=Message
 }
 if(typeof window !=='undefined' && window.Vue){
     install(window.Vue)
@@ -36,7 +38,8 @@ if(typeof window !=='undefined' && window.Vue){
 
 const api = {
     install,
-    ...components
+    ...components,
+    Message
 }
 
 export default api
