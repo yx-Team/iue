@@ -24,7 +24,8 @@ module.exports = {
         children: [
           "/components/base/button",
           "/components/layout/grid",
-          "/components/layout/layout"
+          "/components/layout/layout",
+          "/components/notice/alert"
         ]
       }
     ],

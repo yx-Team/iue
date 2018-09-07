@@ -26,3 +26,11 @@
         border-color:mix(@color-black,@button-color,10%);
     }
 }
+// 多色警告框
+.alert(@color){
+    background:mix(@color-white,@color,90%);
+    border:1px solid mix(@color-white,@color,50%);
+    .iue-alert__icon{
+        color: @color;
+    }
+}
