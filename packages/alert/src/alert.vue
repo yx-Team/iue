@@ -91,9 +91,9 @@ export default {
 @import '../../assets/css/mixins';
 .iue-alert{
     position: relative;
-    padding:8px 15px;
-    line-height: 1.15;
-    font-size: 0;
+    padding:8px 30px 8px 15px;
+    line-height:1.15;
+    font-size: 12px;
     border-radius: @alert-radius;
     vertical-align: middle;
     &--info{
@@ -108,22 +108,23 @@ export default {
     &--danger{
         .alert(@color-danger)
     }
-    
     &__icon{
-        font-size: 12px;
-        margin-right: 8px;
+        &[class*=iue-icon-]{
+            font-size: 12px;
+            margin-right: 8px;
+            vertical-align: inherit;
+        }
+        
     }
     &__content{
         display: inline-block;
     }
     &__title{
         font-size: 12px;
-        
         color: #434E66
     }
     &__desc{
         font-size: 12px;
-        
         padding-top: 10px;
         color: #434E66
     }
@@ -148,6 +149,11 @@ export default {
         }
         .iue-alert__title{
             font-size: 14px;
+            color: @color-title;
+        }
+        .iue-alert__desc{
+            font-size: 12px;
+            line-height: 1.5;
             color: @color-title;
         }
         
