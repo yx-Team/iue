@@ -3,20 +3,38 @@ import Vue from 'vue'
 import MessageConstructor from './message'
 // message组件的父容器
 let messageWarp
-// let instance =[]
+let instances = []
 const Message = (options)=>{
-    let data={};
     if(typeof options === 'string'){
-        data.content=options
+        options={content:options}
     }
-    create(data);
-    console.log('message');
-    
+    return create(options);
 }
+// info/success/warning/danger
+['info','success','warning','danger'].forEach(type=>{
+    
+    Message[type]=(options)=>{
+        if(typeof options === 'string'){
+            options={
+                content:options
+            }
+            
+        }
+        options.type=type;
+        
+        return create(options);
+    }
+})
+// closeAll
+Message.closeAll=function(){
+    instances.forEach(vm=>{
+        vm.handleClose()
+    })
+    instances=[]
+}
+
 //  创建message实例
 let create = (options)=>{
-    
-    
     var instance = Vue.extend(MessageConstructor)
     var vm = new instance({
         data:options
@@ -26,5 +44,7 @@ let create = (options)=>{
     messageWarp.className='iue-message';
     messageWarp.appendChild(vm.$el)
     document.body.appendChild(messageWarp)
+    instances.push(vm)
+    return vm;
 }
 export default Message

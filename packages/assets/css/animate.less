@@ -1,0 +1,32 @@
+.message-slider-top{
+    &-enter{
+        opacity: 0;
+        transform: translateY(-100%);
+        &-active{
+            transition: all .3s;
+        }
+        &-to{
+            opacity: 1;
+        }
+    }
+    &-leave{
+        opacity:1;
+        &-active{
+            transition: all .3s cubic-bezier(0.25, 0.1, 0, 2.15);
+        }
+        &-to{
+            opacity: 0;
+            transform: translateY(-100%) scaleY(0);
+        }
+    }
+}
+
+// 旋转
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -11,7 +11,7 @@ import Content from './content';
 import Sider from './sider';
 import Alert from './alert';
 import Message from './message/index';
-const components = [
+const components = {
     Button,
     ButtonGroup,
     Icon,
@@ -22,12 +22,14 @@ const components = [
     Footer,
     Content,
     Sider,
-    Alert
-]
+    Alert,
+    Message
+}
 
 
 const install = function(Vue){
-    components.forEach(component=>{
+    let comp = Object.values(components)
+    comp.forEach(component=>{
         Vue.component(component.name,component)
     })
     Vue.prototype.$Message=Message
@@ -38,8 +40,7 @@ if(typeof window !=='undefined' && window.Vue){
 
 const api = {
     install,
-    ...components,
-    Message
+    ...components  
 }
-
+export const $Message = Message;
 export default api
