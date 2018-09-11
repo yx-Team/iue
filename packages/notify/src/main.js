@@ -1,24 +1,30 @@
 import Vue from "vue";
-import NotifyConstructor from "./main";
+import NotifyConstructor from "./notify";
 let NotifyWrap;
 
-const Notify = options => {
+const Notify = (options) => {
+ 
   if (typeof options === "string") {
     options = {
-      content: options
+      title: options
     };
   }
   return create(options);
 };
 // 创建实例
-let create = options => {
-  let constructor = Vue.extend(NotifyConstructor);
-  let instace = new constructor({
+let create = (options) => {
+  console.log(options)
+  let instance = Vue.extend(NotifyConstructor);
+  let vm = new instance({
     data: options
-  });
-  let vm = instace.$mount();
-  NotifyWrap = document.createElement("div");
-  NotifyWrap.className = "iue-notify";
+  }).$mount();
+ 
+  if(!NotifyWrap){
+    NotifyWrap = document.createElement("div");
+    NotifyWrap.className = "iue-notify-wrap";
+  }
+  
+  
   NotifyWrap.appendChild(vm.$el);
   document.body.appendChild(NotifyWrap);
   return vm;
