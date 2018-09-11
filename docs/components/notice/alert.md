@@ -1,5 +1,6 @@
 ---
 title: Alert
+pageClass: page-content-wrap
 ---
 # Alert 警告提示
 
@@ -16,6 +17,7 @@ title: Alert
     <iue-alert type="warning" title="warning 提示的文案"></iue-alert>
     <iue-alert type="danger" title="danger 提示的文案"></iue-alert>
 </div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-alert type="info" title="info 提示的文案"></iue-alert>
@@ -23,6 +25,7 @@ title: Alert
 <iue-alert type="warning" title="warning 提示的文案"></iue-alert>
 <iue-alert type="danger" title="danger 提示的文案"></iue-alert>
 ~~~
+
 ## 图标示例
 <div class="alert-demo">
     <iue-alert type="info" show-icon title="info 提示的文案"></iue-alert>
@@ -31,6 +34,7 @@ title: Alert
     <iue-alert type="danger" show-icon  title="danger 提示的文案"></iue-alert>
     <iue-alert type="info" show-icon custom-icon="iconfont iue-icon-frown" title="自定义图标"></iue-alert>
 </div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-alert type="info" show-icon title="info 提示的文案"></iue-alert>
@@ -39,6 +43,8 @@ title: Alert
 <iue-alert type="danger" show-icon  title="danger 提示的文案"></iue-alert>
 <iue-alert type="info" show-icon custom-icon="iconfont iue-icon-frown" title="自定义图标"></iue-alert>
 ~~~
+
+
 ## 带描述示例
 <div class="alert-demo">
     <iue-alert type="info" title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
@@ -49,6 +55,7 @@ title: Alert
         <span slot="desc">文字说明文字说明<b>文字说明</b>文字说明文字说明文字说明</span>
     </iue-alert>
 </div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-alert type="info" title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
@@ -60,6 +67,7 @@ title: Alert
     <span slot="desc">文字说明文字说明<b>文字说明</b>文字说明文字说明文字说明</span>
 </iue-alert>
 ~~~
+
 ## 带描述图标示例
 <div class="alert-demo">
     <iue-alert type="info" show-icon title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
@@ -67,6 +75,7 @@ title: Alert
     <iue-alert type="warning" show-icon  title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
     <iue-alert type="danger" show-icon title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 </div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-alert type="info" show-icon title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
@@ -74,6 +83,7 @@ title: Alert
 <iue-alert type="warning" show-icon  title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 <iue-alert type="danger" show-icon title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 ~~~
+
 ## 带关闭的示例
 <div class="alert-demo">
     <iue-alert type="info" closeable @close="handleClose" title="info 提示的文案"></iue-alert>
@@ -84,6 +94,7 @@ title: Alert
     <iue-alert type="danger" close-text="关闭" show-icon  title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 </div>
 
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 ~~~js
 
 <iue-alert type="info" closeable @close="handleClose" title="info 提示的文案"></iue-alert>
@@ -103,6 +114,7 @@ export default {
     }
 }
 ~~~
+
 
 
 ### Attributes
@@ -132,6 +144,15 @@ export default {
     methods:{
         handleClose(){
             alert('点击了关闭按钮')
+        },
+        toggleCode(e){
+            var next = e.currentTarget.nextElementSibling;
+            console.log(e.currentTarget.nextElementSibling.style.display)
+            if(next.style.display=='none' || next.style.display==''){
+                next.style.display='block'
+            }else{
+                 next.style.display='none'
+            }
         }
     }
 }

@@ -48,5 +48,8 @@ module.exports = {
     editLinks: false,
     // 默认为 "Edit this page"
     editLinkText: '帮助我们改善此页面！'
+  },
+  markdown: {
+    lineNumbers: true
   }
 };

@@ -11,7 +11,7 @@ const Message = (options)=>{
     return create(options);
 }
 // info/success/warning/danger
-['info','success','warning','danger'].forEach(type=>{
+['info','success','warning','danger','loading'].forEach(type=>{
     
     Message[type]=(options)=>{
         if(typeof options === 'string'){
@@ -28,7 +28,7 @@ const Message = (options)=>{
 // closeAll
 Message.closeAll=function(){
     instances.forEach(vm=>{
-        vm.handleClose()
+        vm.close()
     })
     instances=[]
 }

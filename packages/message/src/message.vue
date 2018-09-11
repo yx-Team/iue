@@ -3,7 +3,7 @@
 <div class="iue-message-notice"  v-if="visible"  :style="{'height':height+'px'}">
     <div class="iue-message-notice__content" @mouseenter="clearTimer" @mouseleave="init">
         <i class="iue-message__icon" :class="typeIcon"></i>
-        <i class="iue-message__close iue-icon-close" v-if="closeable" @click="handleClose"></i>
+        <i class="iue-message__close iue-icon-close" v-if="closeable" @click="close"></i>
         <span class="iue-message__text">{{content}}</span>
         
     </div>    
@@ -17,17 +17,17 @@ export default {
     name:'IueMessage',
     data(){
         return{
+            type:'info',//类型,
+            closeable:false,//关闭按钮
+            content:'',//文本内容
+            duration:1.5,//持续时间
+            onClose:null,
+            /////////////////////////////////
             messageAnimate:'message-slider-top',//移动动画
             visible:false,//可见
             closed:false,//关闭状态
             height:60,//高度
             timer:null,//定时器
-            /////////////////////////////////
-            closeable:false,//关闭按钮
-            content:'',//文本内容
-            duration:3,//持续时间
-            type:'info',//类型,
-            onClose:null,
         }
     },
     watch:{
@@ -75,12 +75,12 @@ export default {
             // 延迟关闭
             if( this.duration > 0) {
                 this.timer=setTimeout(() => {
-                    this.handleClose()
+                    this.close()
                 }, this.duration*1000);
             }
         },
-        handleClose(){
-           
+        close(){
+            this.clearTimer()
             if(typeof this.onClose === 'function'){
                 this.onClose();
             }

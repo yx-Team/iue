@@ -7,7 +7,36 @@
 
 ## 基础布局
 
-<grid-base></grid-base>
+<div class="example-demo">
+        <iue-row>
+            <iue-col span="24"><div class="grid-bg-dark">col-24</div></iue-col>
+        </iue-row>
+        <iue-row>
+            <iue-col span="12"><div class="grid-bg">col-12</div></iue-col>
+            <iue-col span="12"><div class="grid-bg-light">col-12</div></iue-col>
+        </iue-row>
+        <iue-row>
+            <iue-col span="8"><div class="grid-bg">col-8</div></iue-col>
+            <iue-col span="8"><div class="grid-bg-light">col-8</div></iue-col>
+            <iue-col span="8"><div class="grid-bg">col-8</div></iue-col>
+        </iue-row>
+        <iue-row>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+        </iue-row>
+        <iue-row>
+            <iue-col span="4"><div class="grid-bg">col-4</div></iue-col>
+            <iue-col span="4"><div class="grid-bg-light">col-4</div></iue-col>
+            <iue-col span="4"><div class="grid-bg">col-4</div></iue-col>
+            <iue-col span="4"><div class="grid-bg-light">col-4</div></iue-col>
+            <iue-col span="4"><div class="grid-bg">col-4</div></iue-col>
+            <iue-col span="4"><div class="grid-bg-light">col-4</div></iue-col>
+        </iue-row>
+    </div>
+
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~ html
 <iue-row>
@@ -39,7 +68,16 @@
 ~~~
 
 ## 分栏间距
-<grid-gutter></grid-gutter>
+
+<div class="example-demo">
+        <iue-row :gutter="20">
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+        </iue-row>
+    </div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-row :gutter="20">
@@ -52,7 +90,25 @@
 
 ## 分栏偏移
 支持偏移指定的栏数。
-<grid-offset></grid-offset>
+
+<div class="example-demo">
+    <iue-row :gutter="20">
+        <iue-col span="8"><div class="grid-bg">col-8</div></iue-col>
+        <iue-col span="4" offset="4"><div class="grid-bg-light">col-4</div></iue-col>
+        <iue-col span="6" offset="2"><div class="grid-bg">col-6</div></iue-col>
+    </iue-row>
+    <iue-row :gutter="20">
+        <iue-col span="6" offset="6"><div class="grid-bg">col-6</div></iue-col>
+        <iue-col span="8" offset="4"><div class="grid-bg">col-8</div></iue-col>
+    </iue-row>
+    <iue-row :gutter="20">
+        <iue-col span="4"><div class="grid-bg">col-4</div></iue-col>
+        <iue-col span="4"><div class="grid-bg">col-4</div></iue-col>
+        <iue-col span="4" offset="4"><div class="grid-bg">col-4</div></iue-col>
+        <iue-col span="4" offset="4"><div class="grid-bg-light">col-4</div></iue-col>
+    </iue-row>
+</div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-row :gutter="20">
@@ -74,7 +130,72 @@
 ## flex布局
 在flex模式下有效，通过设置row的参数(justify、align)为不同的值，来定义子元素的排布方式。
 
-<grid-flex></grid-flex>
+<div class="example-demo">
+    <p>左对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="left" align="center">
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>居中对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="center" align="center">
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>右对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="right" align="center">
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>子元素顶对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="left" align="top">
+            <iue-col span="6"><div class="grid-bg" style="height:80px">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg" style="height:80px">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>子元素底对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="center" align="bottom">
+            <iue-col span="6"><div class="grid-bg" style="height:80px">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg" style="height:80px">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>子元素两边对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="between" align="center">
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>子元素平分空间对齐</p>
+    <div class="example-demo-row">
+        <iue-row type="flex" justify="around" align="center">
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg-light">col-6</div></iue-col>
+            <iue-col span="6"><div class="grid-bg">col-6</div></iue-col>
+        </iue-row>
+    </div>
+    <p>order排序</p>
+    <iue-row type="flex" justify="center" align="center">
+        <iue-col span="6" order="4"><div class="grid-bg">1 col-order-4</div></iue-col>
+        <iue-col span="6" order="3"><div class="grid-bg-light">2  col-order-3</div></iue-col>
+        <iue-col span="6" order="2"><div class="grid-bg">3  col-order-2</div></iue-col>
+        <iue-col span="6" order="1"><div class="grid-bg-light">4  col-order-1</div></iue-col>
+    </iue-row>
+    </div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <!-- 左对齐 -->
@@ -133,7 +254,22 @@
 ## 响应式布局
 参考bootstrap,预留xs、sm、md、lg、xl 这5个属性，并且可以通过 order 来改变元素的排序。
 
-<grid-media></grid-media>
+<div class="example-demo">
+    <iue-row :gutter="20">
+        <iue-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4"><div class="grid-bg"> </div></iue-col>
+        <iue-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4"><div class="grid-bg-light"> </div></iue-col>
+        <iue-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4"><div class="grid-bg"> </div></iue-col>
+        <iue-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4"><div class="grid-bg-light"> </div></iue-col>
+        <iue-col :xs="24" :sm="6" :md="8" :lg="12" :xl="4"><div class="grid-bg"> </div></iue-col>
+        <iue-col :xs="24" :sm="6" :md="8" :lg="12" :xl="4"><div class="grid-bg-light"> </div></iue-col>
+    </iue-row>
+    <iue-row :gutter="20">
+        <iue-col :md="{span:4,offset:4}" :lg="{span:6}"><div class="grid-bg"> </div></iue-col>
+        <iue-col :md="{span:4,offset:4}" :lg="{span:4,offset:2}"><div class="grid-bg-light"> </div></iue-col>
+        <iue-col :md="{span:4}" :lg="{span:4,offset:2}"><div class="grid-bg"> </div></iue-col>
+    </iue-row>
+</div>
+<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-row :gutter="20">
@@ -174,6 +310,28 @@
 | md          | ≥992px 响应式栅格数或者栅格属性对象   |    Number/Object(例如： {span: 4, offset: 4})   | --             |  --          |
 | lg          | ≥1200px 响应式栅格数或者栅格属性对象   |    Number/Object(例如： {span: 4, offset: 4})   | --             |  --          |
 | xl          | ≥1920px 响应式栅格数或者栅格属性对象   |    Number/Object(例如： {span: 4, offset: 4})   | --             |  --          |
+
+
+
+<script>
+import Vue from 'vue'
+import Iue from '../../../packages'
+Vue.use(Iue)
+export default {
+    name:'LayoutGrid',
+    methods:{
+        toggleCode(e){
+            var next = e.currentTarget.nextElementSibling;
+            console.log(e.currentTarget.nextElementSibling.style.display)
+            if(next.style.display=='none' || next.style.display==''){
+                next.style.display='block'
+            }else{
+                 next.style.display='none'
+            }
+        }
+    }
+}
+</script>
 <style lang="less">
     
     /* 示例间距 */
