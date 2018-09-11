@@ -11,6 +11,7 @@ import Content from './content';
 import Sider from './sider';
 import Alert from './alert';
 import Message from './message/index';
+import Notify from './notify/index';
 const components = {
     Button,
     ButtonGroup,
@@ -23,7 +24,8 @@ const components = {
     Content,
     Sider,
     Alert,
-    Message
+    Message,
+    Notify
 }
 
 
@@ -33,6 +35,7 @@ const install = function(Vue){
         Vue.component(component.name,component)
     })
     Vue.prototype.$Message=Message
+    Vue.prototype.$Notify=Notify
 }
 if(typeof window !=='undefined' && window.Vue){
     install(window.Vue)
@@ -43,4 +46,5 @@ const api = {
     ...components  
 }
 export const $Message = Message;
+export const $Notify = Notify;
 export default api

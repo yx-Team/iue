@@ -26,7 +26,8 @@ module.exports = {
           "/components/layout/grid",
           "/components/layout/layout",
           "/components/notice/alert",
-          "/components/notice/message"
+          "/components/notice/message",
+          "/components/notice/notify"
         ]
       }
     ],
