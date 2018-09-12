@@ -7,10 +7,11 @@ pageClass: page-content-wrap
 ## 概述
 轻量级的信息通知组件，在顶部右侧显示，并自动消失。有多种不同的通知状态可选择。
 
-## 普通提示
-最基本的通知提醒，默认在1.5s后消失
+## 基础用法
+最基本的通知提醒，默认在5s后消失
 
 <iue-button type="primary" @click="click01">显示普通提示</iue-button>
+<iue-button type="primary" @click="click02">只显示标题</iue-button>
 
 <script>
 import Vue from 'vue'
@@ -20,6 +21,12 @@ export default {
     name:'NoticeNotify',
     methods:{
         click01(){
+            this.$Notify({
+                title:'通知',
+                desc:'通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容'
+            })
+        },
+         click02(){
             this.$Notify('通知提醒')
         },
         toggleCode(e){

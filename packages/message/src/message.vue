@@ -1,9 +1,9 @@
 <template>
 <transition :name="messageAnimate">
-<div class="iue-message-notice"  v-if="visible"  :style="{'height':height+'px'}">
+<div class="iue-message-notice" :class="{'is-close':height===0}"  v-if="visible"  :style="{'height':height+'px'}">
     <div class="iue-message-notice__content" @mouseenter="clearTimer" @mouseleave="init">
         <i class="iue-message__icon" :class="typeIcon"></i>
-        <i class="iue-message__close iue-icon-close" v-if="closeable" @click="close"></i>
+        <i class="iue-message__close iue-icon-close" v-if="closeable" @click="handleClose"></i>
         <span class="iue-message__text">{{content}}</span>
         
     </div>    
@@ -28,14 +28,6 @@ export default {
             closed:false,//关闭状态
             height:60,//高度
             timer:null,//定时器
-        }
-    },
-    watch:{
-        // 监控是否关闭，关闭的时候监听动画结束，执行onTransitionEnd
-        closed(val){
-            if(val){
-                this.$el.addEventListener('transitionend',this.onTransitionEnd)
-            }
         }
     },
     computed:{
@@ -64,10 +56,27 @@ export default {
             return icon
         }
     },
+    watch:{
+        // 监控是否关闭，关闭的时候监听动画结束，执行onTransitionEnd
+        closed(val){
+            if(val){
+                // 页面动画执行完dom更新再销毁，不然页面会出现部分dom不销毁
+                this.$nextTick(()=>{
+                   this.destroyEle()
+                })
+                
+            }
+        },
+        // 高度为0，执行close()
+        height(val){
+            if(val===0){
+                this.close()
+            }
+        }
+    },
     mounted(){
         this.visible=true;
         this.init();
-        
     },
     methods:{
         init(){
@@ -75,23 +84,26 @@ export default {
             // 延迟关闭
             if( this.duration > 0) {
                 this.timer=setTimeout(() => {
-                    this.close()
+                    this.height=0;
                 }, this.duration*1000);
             }
+        },
+        handleClose(){
+             this.height=0;
         },
         close(){
             this.clearTimer()
             if(typeof this.onClose === 'function'){
                 this.onClose();
             }
-            this.closed=true;
-            this.height=0;
+            // this.closed=true;
+            
         },
         // 动画结束，销毁事件，移除dom
-        onTransitionEnd(){
-            this.$el.removeEventListener('transitionend',this.onTransitionEnd)
+        destroyEle(){
+            this.visible=false;
             this.$destroy();
-            this.$el.parentNode.removeChild(this.$el)
+            console.log('end')
         },
         clearTimer(){
             clearTimeout(this.timer)
@@ -116,7 +128,7 @@ export default {
     &-notice{
         position: relative;
         pointer-events: none;
-        transform-origin: center top;
+        transform-origin: 0 0;
         overflow: hidden;
         transition: all .3s;
         &__content{
@@ -131,6 +143,11 @@ export default {
             border-radius: @message-radius;
             box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
             pointer-events: all;
+        }
+        &.is-close{
+            opacity: 0;
+            height: 0;
+            transform: translateY(-100%);
         }
         
         

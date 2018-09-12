@@ -160,12 +160,13 @@ export default {
             });
         },
         closeMessage(){
+            
             this.$Message({
                 content:'带关闭的提示',
                 duration:10,
                 closeable:true,
                 onClose:function(){
-                   this.$Message.info('关闭了');
+                  alert('关闭了');
                 }
             });
         },

@@ -1,16 +1,13 @@
 <template>
 <transition name="notify">
-    <div class="iue-notify" :class="classList" v-if="visible" :style="eleStyle" @mouseenter="clearTimer" @mouseleave="init">
+    <div class="iue-notify" :class="classList" v-if="visible" @mouseenter="clearTimer" @mouseleave="init">
         <i class="iue-notify__icon" v-if="showIcon || customIcon" :class="iconClass"></i>
         <div class="iue-notify__content">
             <div class="iue-notify__title" v-if="title">
                 {{title}}
                 <div class="iue-notify__close" v-if="closeable" @click="close"><i class="iue-icon-close"></i></div>
             </div>
-            <div class="iue-notify__desc" v-if="desc">
-                <template>{{desc}}</template>
-            </div>
-            
+            <div class="iue-notify__desc" v-if="desc">{{desc}}</div>
         </div>
     </div>
 </transition>    
@@ -27,7 +24,8 @@ export default {
             customIcon:'',
             type:'info',
             closeable:true,
-            duration:1.5,
+            duration:5,
+            onClose:null,
             visible:false,
             height:'auto',
             closed:false,
@@ -69,51 +67,42 @@ export default {
                 ['is-desc']:this.desc
             }
             return list
-        },
-        eleStyle(){
-            return {
-                height:this.height,
-                paddingTop:this.height,
-                paddingBottom:this.height
-            }
         }
     },
     watch:{
         closed(val){
             if(val){
+                this.visible = false;
                 this.$el.addEventListener('transitionend',this.destroyEle)
             }
         }
     },
     mounted(){
-        this.visible=true;
+        // 显示notify
         this.init();
     },
     methods:{
         init(){
             if(this.closed) return;
-            this.$nextTick(()=>{
-                this.height = this.$el.getBoundingClientRect().height;
-            })
+
+            this.visible=true;
             if(this.duration>0){
                 this.timer=setTimeout(() => {
                     this.close()
                 }, this.duration*1000);
             }
         },
+        // 销毁元素
         destroyEle(){
-            console.log(123123)
             this.$el.removeEventListener('transitionend',this.destroyEle)
             this.$destroy();
-            this.$el.parentNode.removeChild(this.$el)
         },
         close(){
-           
             this.clearTimer();
+            if(typeof this.onClose === 'function'){
+                this.onClose();
+            }
             this.closed=true;
-            this.height=0;
-            
-            
         },
         clearTimer(){
             clearTimeout(this.timer)
@@ -137,6 +126,7 @@ export default {
     pointer-events: all;
     overflow: hidden;
     margin-bottom: 20px;
+    transform-origin: center top;
     transition: all .3s;
     &-wrap{
         position: fixed;
