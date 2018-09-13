@@ -3,8 +3,7 @@
     <div class="iue-notify" :class="classList" v-if="visible" @mouseenter="clearTimer" @mouseleave="init">
         <i class="iue-notify__icon" v-if="showIcon || customIcon" :class="iconClass"></i>
         <div class="iue-notify__content">
-            <div class="iue-notify__title" v-if="title">
-                {{title}}
+            <div class="iue-notify__title" v-if="title">{{title}}
                 <div class="iue-notify__close" v-if="closeable" @click="close"><i class="iue-icon-close"></i></div>
             </div>
             <div class="iue-notify__desc" v-if="desc">{{desc}}</div>
@@ -149,6 +148,7 @@ export default {
         .notify(@color-danger)
     }
     &__icon{
+        color: #999;
         &[class*=iue-icon-]{
             font-size: 12px;
             margin-right: 8px;
@@ -171,10 +171,13 @@ export default {
     &__close{
         position: absolute;
         right: 10px;
-        top: 6px;
+        top: 12px;
         font-size: 12px;
         color: #999;
         cursor: pointer;
+        &:hover{
+            color: #666;
+        }
         &.is-closetext{
             top: 8px;
         }
@@ -189,6 +192,7 @@ export default {
         }
         .iue-notify__title{
             font-size: 14px;
+            font-weight: bold;
             color: @color-title;
         }
         .iue-notify__desc{

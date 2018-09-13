@@ -1,7 +1,7 @@
 import Vue from "vue";
 import NotifyConstructor from "./notify";
 let NotifyWrap;
-
+let instances=[];
 const Notify = (options) => {
  
   if (typeof options === "string") {
@@ -11,6 +11,19 @@ const Notify = (options) => {
   }
   return create(options);
 };
+// 四种状态
+['info','success','warning','danger'].forEach(type=>{
+  Notify[type]= (options) => {
+
+    if (typeof options === "string") {
+      options = {
+        title: options
+      };
+    }
+    options.type=type
+    return create(options);
+  }
+})
 // 创建实例
 let create = (options) => {
   console.log(options)
@@ -27,9 +40,14 @@ let create = (options) => {
   
   NotifyWrap.appendChild(vm.$el);
   document.body.appendChild(NotifyWrap);
+  instances.push(vm);
   return vm;
 };
 // 关闭所有
-Notify.closeAll = () => {};
+Notify.closeAll = () => {
+  instances.forEach(vm=>{
+    vm.close();
+  })
+};
 
 export default Notify;
