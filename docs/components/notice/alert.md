@@ -4,20 +4,22 @@ pageClass: page-content-wrap
 ---
 # Alert 警告提示
 
-## 概述
+### 概述
 静态地呈现一些警告信息，可手动关闭。
 
 
+### 基础示例
 
-
-## 基础示例
-<div class="alert-demo">
-    <iue-alert type="info" title="info 提示的文案"></iue-alert>
-    <iue-alert type="success" title="success 提示的文案"></iue-alert>
-    <iue-alert type="warning" title="warning 提示的文案"></iue-alert>
-    <iue-alert type="danger" title="danger 提示的文案"></iue-alert>
+<div>
+    <doc-panel>
+        <div class="alert-demo">
+            <iue-alert type="info" title="info 提示的文案"></iue-alert>
+            <iue-alert type="success" title="success 提示的文案"></iue-alert>
+            <iue-alert type="warning" title="warning 提示的文案"></iue-alert>
+            <iue-alert type="danger" title="danger 提示的文案"></iue-alert>
+        </div>
+    </doc-panel>
 </div>
-<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 
 ~~~html
 <iue-alert type="info" title="info 提示的文案"></iue-alert>
@@ -26,17 +28,21 @@ pageClass: page-content-wrap
 <iue-alert type="danger" title="danger 提示的文案"></iue-alert>
 ~~~
 
-## 图标示例
-<div class="alert-demo">
-    <iue-alert type="info" show-icon title="info 提示的文案"></iue-alert>
-    <iue-alert type="success" show-icon title="success 提示的文案"></iue-alert>
-    <iue-alert type="warning" show-icon title="warning 提示的文案"></iue-alert>
-    <iue-alert type="danger" show-icon  title="danger 提示的文案"></iue-alert>
-    <iue-alert type="info" show-icon custom-icon="iconfont iue-icon-frown" title="自定义图标"></iue-alert>
-</div>
-<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
+### 图标示例
 
-~~~html
+<div>
+    <doc-panel>
+        <div class="alert-demo">
+            <iue-alert type="info" show-icon title="info 提示的文案"></iue-alert>
+            <iue-alert type="success" show-icon title="success 提示的文案"></iue-alert>
+            <iue-alert type="warning" show-icon title="warning 提示的文案"></iue-alert>
+            <iue-alert type="danger" show-icon  title="danger 提示的文案"></iue-alert>
+            <iue-alert type="info" show-icon custom-icon="iconfont iue-icon-frown" title="自定义图标"></iue-alert>
+        </div>
+    </doc-panel>
+</div>
+
+~~~ html
 <iue-alert type="info" show-icon title="info 提示的文案"></iue-alert>
 <iue-alert type="success" show-icon title="success 提示的文案"></iue-alert>
 <iue-alert type="warning" show-icon title="warning 提示的文案"></iue-alert>
@@ -45,19 +51,23 @@ pageClass: page-content-wrap
 ~~~
 
 
-## 带描述示例
-<div class="alert-demo">
-    <iue-alert type="info" title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="success" title="success 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="warning" title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="danger" title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="danger" title="danger 提示的文案">
-        <span slot="desc">文字说明文字说明<b>文字说明</b>文字说明文字说明文字说明</span>
-    </iue-alert>
-</div>
-<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
+### 带描述示例
 
-~~~html
+<div>
+    <doc-panel>
+        <div class="alert-demo">
+            <iue-alert type="info" title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="success" title="success 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="warning" title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="danger" title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="danger" title="danger 提示的文案">
+                <span slot="desc">文字说明文字说明<b>文字说明</b>文字说明文字说明文字说明</span>
+            </iue-alert>
+        </div>
+    </doc-panel>
+</div>
+
+~~~ html
 <iue-alert type="info" title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 <iue-alert type="success" title="success 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 <iue-alert type="warning" title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
@@ -68,33 +78,41 @@ pageClass: page-content-wrap
 </iue-alert>
 ~~~
 
-## 带描述图标示例
-<div class="alert-demo">
-    <iue-alert type="info" show-icon title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="success" show-icon  title="success 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="warning" show-icon  title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="danger" show-icon title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-</div>
-<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
+### 带描述图标示例
 
-~~~html
+<div>
+    <doc-panel>
+        <div class="alert-demo">
+            <iue-alert type="info" show-icon title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="success" show-icon  title="success 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="warning" show-icon  title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="danger" show-icon title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+        </div>
+    </doc-panel>
+</div>
+
+~~~ html
 <iue-alert type="info" show-icon title="info 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 <iue-alert type="success" show-icon  title="success 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 <iue-alert type="warning" show-icon  title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 <iue-alert type="danger" show-icon title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
 ~~~
 
-## 带关闭的示例
-<div class="alert-demo">
-    <iue-alert type="info" closeable @close="handleClose" title="info 提示的文案"></iue-alert>
-    <iue-alert type="warning"  closeable  show-icon title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="success" closeable  title="success 提示的文案"></iue-alert>
-    <iue-alert type="info" close-text="关闭" title="info 自定义关闭按钮文字"></iue-alert>
-    <iue-alert type="danger" closeable title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
-    <iue-alert type="danger" close-text="关闭" show-icon  title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+### 带关闭的示例
+
+<div>
+    <doc-panel>
+        <div class="alert-demo">
+            <iue-alert type="info" closeable @close="handleClose" title="info 提示的文案"></iue-alert>
+            <iue-alert type="warning"  closeable  show-icon title="warning 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="success" closeable  title="success 提示的文案"></iue-alert>
+            <iue-alert type="info" close-text="关闭" title="info 自定义关闭按钮文字"></iue-alert>
+            <iue-alert type="danger" closeable title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+            <iue-alert type="danger" close-text="关闭" show-icon  title="danger 提示的文案" desc="文字说明文字说明文字说明文字说明文字说明文字说明"></iue-alert>
+        </div>
+    </doc-panel>
 </div>
 
-<iue-button type="default" block  @click="toggleCode" icon="code">代码</iue-button>
 ~~~js
 
 <iue-alert type="info" closeable @close="handleClose" title="info 提示的文案"></iue-alert>
@@ -157,11 +175,3 @@ export default {
     }
 }
 </script>
-<style lang="less">
-.alert-demo{
-    padding-top:20px;
-    .iue-alert{
-        margin-bottom:10px;
-    }
-}
-</style>

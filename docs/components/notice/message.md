@@ -4,14 +4,18 @@ pageClass: page-content-wrap
 ---
 # Message 全局提示
 
-## 概述
+### 概述
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
-## 普通提示
+### 普通提示
 最基本的提示，默认在1.5s后消失
 
-<iue-button type="primary" @click="click01">显示普通提示</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button type="primary" @click="click01">显示普通提示</iue-button>
+    </doc-panel>
+</div>
+
 ~~~ js
 <iue-button type="primary" @click="click01">显示普通提示</iue-button>
 
@@ -24,14 +28,17 @@ export default {
 }
 ~~~
 
-## 提示类型
+### 提示类型
 不同的提示类型success warning danger
 
+<div>
+    <doc-panel>
+        <iue-button type="success" @click="success">显示成功提示</iue-button>
+        <iue-button type="warning" @click="warning">显示警告提示</iue-button>
+        <iue-button type="danger" @click="danger">显示错误提示</iue-button>
+    </doc-panel>
+</div>
 
-<iue-button type="success" @click="success">显示成功提示</iue-button>
-<iue-button type="warning" @click="warning">显示警告提示</iue-button>
-<iue-button type="danger" @click="danger">显示错误提示</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
 ~~~ js
 
 <iue-button type="success" @click="success">显示成功提示</iue-button>
@@ -53,11 +60,15 @@ export default {
 }
 ~~~
 
-## 自定义时长
+### 自定义时长
 显示一个10s的加载提示框,通过传入一个对象，改变duration的值，来设置显示时间
 
-<iue-button @click="loading">显示加载提示</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+    <iue-button @click="loading">显示加载提示</iue-button>
+    </doc-panel>
+</div>
+
 ~~~ js
 <iue-button @click="loading">显示加载提示</iue-button>
 export default {
@@ -73,11 +84,15 @@ export default {
 ~~~
 
 
-## 可关闭
+### 可关闭
 显示一个带关闭按钮的提示框，通过传入一个对象，改变closeable的值，来设置关闭按钮显示隐藏
 
-<iue-button @click="closeMessage">带关闭的提示</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button @click="closeMessage">带关闭的提示</iue-button>
+    </doc-panel>
+</div>
+
 ~~~ js
 <iue-button @click="closeMessage">带关闭的提示</iue-button>
 export default {
@@ -95,10 +110,10 @@ export default {
         }
 }
 ~~~
-## 全局方法
+### 全局方法
 为 Vue.prototype 添加了全局方法 $Message。因此在 vue instance 中可以采用本页面中的方式调用 Message
 
-## 单独引用
+### 单独引用
 单独引入 Message
 
 <pre class="language-js">

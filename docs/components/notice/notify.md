@@ -4,15 +4,19 @@ pageClass: page-content-wrap
 ---
 # Notify 通知提醒
 
-## 概述
+### 概述
 轻量级的信息通知组件，在顶部右侧显示，并自动消失。有多种不同的通知状态可选择。
 
-## 基础用法
+### 基础用法
 最基本的通知提醒，默认在5s后消失,不写desc,默认以标题模式展示
 
-<iue-button type="primary" @click="click01">显示普通提示</iue-button>
-<iue-button type="primary" @click="click02">只显示标题</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button type="primary" @click="click01">显示普通提示</iue-button>
+        <iue-button type="primary" @click="click02">只显示标题</iue-button>
+    </doc-panel>
+</div>
+
 ~~~ js
 <iue-button type="primary" @click="click01">显示普通提示</iue-button>
 <iue-button type="primary" @click="click02">只显示标题</iue-button>
@@ -33,14 +37,18 @@ export default {
 }
 ~~~
 
-## 多种状态
+### 多种状态
 提供四种状态模式：success/warning/danger
 
-<iue-button type="info" @click="click03">信息</iue-button>
-<iue-button type="success" @click="click04">成功</iue-button>
-<iue-button type="warning" @click="click05">警告</iue-button>
-<iue-button type="danger" @click="click06">错误</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button type="info" @click="click03">信息</iue-button>
+        <iue-button type="success" @click="click04">成功</iue-button>
+        <iue-button type="warning" @click="click05">警告</iue-button>
+        <iue-button type="danger" @click="click06">错误</iue-button>
+    </doc-panel>
+</div>
+
 ~~~ js
 <iue-button type="info" @click="click03">信息</iue-button>
 <iue-button type="success" @click="click04">成功</iue-button>
@@ -77,11 +85,14 @@ export default {
 }
 ~~~
 
-## 定义时长
+### 定义时长
 自定义显示时间
 
-<iue-button type="default" @click="click07">自定义时长</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button type="default" @click="click07">自定义时长</iue-button>
+    </doc-panel>
+</div>
 
 ~~~ js
 <iue-button type="default" @click="click07">自定义时长</iue-button>
@@ -98,12 +109,15 @@ export default {
     }
 }
 ~~~
-## 自定义图标
+### 自定义图标
 通过参数showIcon显示隐藏图标，通过参数customIcon自定义图标
 
-<iue-button type="default" @click="click08">不显示图标</iue-button>
-<iue-button type="default" @click="click09">自定义图标</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button type="default" @click="click08">不显示图标</iue-button>
+        <iue-button type="default" @click="click09">自定义图标</iue-button>
+    </doc-panel>
+</div>
 
 ~~~ js
 <iue-button type="default" @click="click08">不显示图标</iue-button>
@@ -129,12 +143,15 @@ export default {
 }
 ~~~
 
-## 可关闭
+### 可关闭
 默认显示一个带关闭按钮的提示框，通过传入一个对象，改变closeable的值，来设置关闭按钮显示隐藏
 
-<iue-button type="default" @click="click10">显示关闭</iue-button>
-<iue-button type="default" @click="click11">不显示关闭</iue-button>
-<iue-button type="default"  @click="toggleCode" icon="code"></iue-button>
+<div>
+    <doc-panel>
+        <iue-button type="default" @click="click10">显示关闭</iue-button>
+        <iue-button type="default" @click="click11">不显示关闭</iue-button>
+    </doc-panel>
+</div>
 
 ~~~ js
 <iue-button type="default" @click="click10">显示关闭</iue-button>
@@ -161,10 +178,10 @@ export default {
 ~~~
 
 
-## 全局方法
+### 全局方法
 为 Vue.prototype 添加了全局方法 $Notify。因此在 vue instance 中可以采用本页面中的方式调用 Notify
 
-## 单独引用
+### 单独引用
 单独引入 Notify
 
 <pre class="language-js">
@@ -172,7 +189,7 @@ import {$Notify} from '../../../packages'
 $Notify('hello')
 </pre>
 
-##其他调用方式
+### 其他调用方式
 除了可以通过this.$Notify(options)方式调用，还可以通过以下方式调用：
 
 > this.$Notify.info(options)
@@ -283,15 +300,6 @@ export default {
                 desc:'通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容',
                 closeable:false
             })
-        },
-        toggleCode(e){
-            var next = e.currentTarget.nextElementSibling;
-            console.log(e.currentTarget.nextElementSibling.style.display)
-            if(next.style.display=='none' || next.style.display==''){
-                next.style.display='block'
-            }else{
-                 next.style.display='none'
-            }
         }
     }
 }

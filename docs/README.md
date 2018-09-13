@@ -1,6 +1,6 @@
 ---
 home: false
-actionText: 快速上手 →
+actionText: 快速上手s →
 actionLink: /zh/guide/
 features:
 - title: 简洁至上
