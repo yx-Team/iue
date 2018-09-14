@@ -2,6 +2,7 @@ import './assets/css/index.less';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Icon from './icon';
+
 import Row from './row';
 import Col from './col';
 import Layout from './layout';
@@ -9,13 +10,20 @@ import Header from './header';
 import Footer from './footer';
 import Content from './content';
 import Sider from './sider';
+
+import Tabs from './tabs';
+import TabsItem from './tabs-item';
+
+
 import Alert from './alert';
 import Message from './message/index';
 import Notify from './notify/index';
+
 const components = {
     Button,
     ButtonGroup,
     Icon,
+    
     Row,
     Col,
     Layout,
@@ -23,6 +31,10 @@ const components = {
     Footer,
     Content,
     Sider,
+
+    Tabs,
+    TabsItem,
+
     Alert,
     Message,
     Notify

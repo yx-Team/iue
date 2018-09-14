@@ -19,12 +19,31 @@ module.exports = {
         ]
       },
       {
-        title: "组件",
+        title: "基础",
         collapsable: false,
         children: [
-          "/components/base/button",
+          "/components/base/button"
+        ]
+      },
+      {
+        title: "布局",
+        collapsable: false,
+        children: [
           "/components/layout/grid",
-          "/components/layout/layout",
+          "/components/layout/layout"
+        ]
+      },
+      {
+        title: "导航",
+        collapsable: false,
+        children: [
+          "/components/navigation/tab"
+        ]
+      },
+      {
+        title: "通知",
+        collapsable: false,
+        children: [
           "/components/notice/alert",
           "/components/notice/message",
           "/components/notice/notify"
