@@ -37,7 +37,7 @@ module.exports = {
         title: "导航",
         collapsable: false,
         children: [
-          "/components/navigation/tab"
+          "/components/navigation/tabs"
         ]
       },
       {

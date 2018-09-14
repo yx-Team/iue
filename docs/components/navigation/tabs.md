@@ -1,10 +1,10 @@
 ---
-title: Tab
+title: Tabs
 pageClass: page-content-wrap
 ---
 
 
-# Tab 选项卡
+# Tabs 选项卡
 
 ### 基础用法
 
@@ -13,22 +13,19 @@ pageClass: page-content-wrap
 <div>
     <doc-panel>
         <iue-tabs>
-            <iue-tabs-item name="系统配置">系统配置</iue-tabs-item>
-            <iue-tabs-item name="主题设置">主题设置</iue-tabs-item>
-            <iue-tabs-item name="水印设置">水印设置</iue-tabs-item>
+            <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+            <iue-tabs-item label="主题设置">主题设置主题设置主题设置主题设置</iue-tabs-item>
+            <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
         </iue-tabs>
     </doc-panel>
 </div>
 
 ~~~ html
-<iue-button @click="btnHandle">默认</iue-button>
-<iue-button type="primary">主按钮</iue-button>
-<iue-button type="dashed">虚线</iue-button>
-<iue-button type="text">文本</iue-button>
-<iue-button type="info">Info</iue-button>
-<iue-button type="success">Success</iue-button>
-<iue-button type="warning">Warning</iue-button>
-<iue-button type="danger">Danger</iue-button>
+<iue-tabs>
+    <iue-tabs-item name="系统配置">系统配置</iue-tabs-item>
+    <iue-tabs-item name="主题设置">主题设置</iue-tabs-item>
+    <iue-tabs-item name="水印设置">水印设置</iue-tabs-item>
+</iue-tabs>
 ~~~
 
 
