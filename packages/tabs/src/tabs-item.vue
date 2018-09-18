@@ -1,25 +1,37 @@
 <template>
-    <div class="iue-tabs__item" v-if="visibel"><slot></slot></div>
+  <div 
+    class="iue-tabs__item" 
+    v-show="visibel" 
+    :style="{width:width}"
+  ><slot/></div>
 </template>
 
 <script>
 export default {
-    name:'IueTabsItem',
-    props:{
-        label:[Number,String]
+  name: "IueTabsItem",
+  props: {
+    label: {
+      type: [Number, String],
+      default: 0
     },
-    data(){
-        return {
-            name:this.label,
-            visibel:false
-        }
+    name: {
+      type: [Number, String],
+      default: 0
     },
-    mounted(){
-       
+    disabled: {
+      type: Boolean,
+      default: false
     }
-}
+  },
+  data() {
+    return {
+      itemName: "",
+      width:'100%',
+      visibel: false
+    };
+  }
+};
 </script>
 
 <style lang="less">
-
 </style>

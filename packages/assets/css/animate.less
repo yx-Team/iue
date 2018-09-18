@@ -1,3 +1,23 @@
+.tab-slider-left{
+    &-enter{
+        transform: translateY(-100%);
+        &-active{
+            transition: all .3s;
+        }
+        &-to{
+            transform: translateY(0);
+        }
+    }
+    &-leave{
+        transform: translateY(0%);
+        &-active{
+            transition: all .3s;
+        }
+        &-to{
+            transform: translateY(100%);
+        }
+    }
+}
 .message-slider-top{
     &-enter{
         opacity: 0;

@@ -21,13 +21,86 @@ pageClass: page-content-wrap
 </div>
 
 ~~~ html
-<iue-tabs>
-    <iue-tabs-item name="系统配置">系统配置</iue-tabs-item>
-    <iue-tabs-item name="主题设置">主题设置</iue-tabs-item>
-    <iue-tabs-item name="水印设置">水印设置</iue-tabs-item>
-</iue-tabs>
+<doc-panel>
+    <iue-tabs>
+        <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+        <iue-tabs-item label="主题设置">主题设置主题设置主题设置主题设置</iue-tabs-item>
+        <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+    </iue-tabs>
+</doc-panel>
 ~~~
 
+### v-model双向绑定
+
+基础的按钮用法
+
+<div>
+    <doc-panel>
+        <iue-tabs v-model="tabName">
+            <iue-tabs-item label="系统配置" name="tab01">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+            <iue-tabs-item label="主题设置" name="tab02">主题设置主题设置主题设置主题设置</iue-tabs-item>
+            <iue-tabs-item label="水印设置" name="tab03">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+        </iue-tabs>
+    </doc-panel>
+</div>
+
+~~~ html
+<doc-panel>
+    <iue-tabs>
+        <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+        <iue-tabs-item label="主题设置">主题设置主题设置主题设置主题设置</iue-tabs-item>
+        <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+    </iue-tabs>
+</doc-panel>
+~~~
+
+### disabled 禁用
+
+基础的按钮用法
+
+<div>
+    <doc-panel>
+        <iue-tabs>
+            <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+            <iue-tabs-item label="主题设置" :disabled="true">主题设置主题设置主题设置主题设置</iue-tabs-item>
+            <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+        </iue-tabs>
+    </doc-panel>
+</div>
+
+~~~ html
+<doc-panel>
+    <iue-tabs>
+        <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+        <iue-tabs-item label="主题设置" :disabled="true">主题设置主题设置主题设置主题设置</iue-tabs-item>
+        <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+    </iue-tabs>
+</doc-panel>
+~~~
+
+### animated 动画
+
+基础的按钮用法
+
+<div>
+    <doc-panel>
+        <iue-tabs :animated="true">
+            <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+            <iue-tabs-item label="主题设置">主题设置主题设置主题设置主题设置</iue-tabs-item>
+            <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+        </iue-tabs>
+    </doc-panel>
+</div>
+
+~~~ html
+<doc-panel>
+    <iue-tabs>
+        <iue-tabs-item label="系统配置">系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置系统配置</iue-tabs-item>
+        <iue-tabs-item label="主题设置" :disabled="true">主题设置主题设置主题设置主题设置</iue-tabs-item>
+        <iue-tabs-item label="水印设置">水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置水印设置</iue-tabs-item>
+    </iue-tabs>
+</doc-panel>
+~~~
 
 ### Attributes
 
@@ -49,23 +122,18 @@ import Iue from '../../../packages'
 Vue.use(Iue)
 export default {
     name:'BaseButton',
-    methods:{
-        btnHandle() {
-            alert("点击了按钮");
-        },
-        toggleCode(e){
-            var next = e.currentTarget.nextElementSibling;
-            console.log(e.currentTarget.nextElementSibling.style.display)
-            if(next.style.display=='none' || next.style.display==''){
-                next.style.display='block'
-            }else{
-                 next.style.display='none'
-            }
-        },
-        moveCode(el){
-            console.log(1);
-            console.log(el)
+    data(){
+        return{
+            tabName:'tab01'
         }
+    },
+    watch:{
+        tabName(val){
+            console.log(val)
+        }
+    },
+    methods:{
+       
     }
 }
 </script>
